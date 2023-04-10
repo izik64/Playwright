@@ -10,6 +10,7 @@ const scansPageUrl = config.urlData.scansPageUrl;
 const wrongUserName = config.autotest.wrongUserName;
 const wrongUserPassword = config.autotest.wrongUserPassword;
 const incorrectUserNameMask = config.autotest.incorrectUserNameMask;
+const titleName = config.elementsName.titleName;
 
 test.describe("UI tests for the login page", () => {
   test.beforeEach(async ({ page }, testInfo) => {
@@ -42,7 +43,7 @@ test.describe("UI tests for the login page", () => {
     await loginPage.checkLogInErrorMessage();
     await loginPage.checkPageUrl(url);
     const title = await page.title();
-    await expect(title).toBe("Bright Security");
+    await expect(title).toBe(titleName);
   });
 
   test("Should check email form mask", async ({ page }) => {
