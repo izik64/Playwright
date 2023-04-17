@@ -3,11 +3,13 @@ import { expect, Page, Locator } from "@playwright/test";
 
 export class ScansPage {
   readonly page: Page;
+  readonly scanInputLablesContainer: Locator;
   readonly scanInputLables: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    this.scanInputLables = page.locator(".cdk-column-name > .title").nth(0);
+    this.scanInputLablesContainer = page.locator(".cdk-column-name > .title");
+    this.scanInputLables = this.scanInputLablesContainer.first();
   }
 
   async checkThatPageElementsAreExists() {

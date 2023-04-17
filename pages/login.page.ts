@@ -17,8 +17,12 @@ export class LoginPage {
     this.userNameInputField = page.locator("#mat-input-0");
     this.passwordInputField = page.locator("#mat-input-1");
     this.signInButton = page.locator('//*[@data-id="btn_sign_in"]');
-    this.emailInputLabel = page.locator("mat-label.ng-tns-c8-0");
-    this.passwordInputLabel = page.locator("mat-label.ng-tns-c8-1 > span");
+    this.emailInputLabel = page.locator(
+      "//mat-label[contains(text(), 'Email')]"
+    );
+    this.passwordInputLabel = page.locator(
+      "//label/mat-label/span[contains(text(), 'Password')]"
+    );
     this.emailInputErrorField = page.locator("#mat-mdc-error-0");
     this.passwordInputErrorField = page.locator("#mat-mdc-error-1");
     this.errorMessagePopUp = page.locator(
